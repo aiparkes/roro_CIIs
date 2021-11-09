@@ -5,6 +5,7 @@ from quant_reg_funcs import ols_reg, quant_reg
 import streamlit as st
 from PIL import Image
 import os
+import re
 #setting favicon
 favicon = Image.open('illustration_resources/favicon.jpg')
 st.set_page_config(page_title='CII Tool', page_icon=favicon)

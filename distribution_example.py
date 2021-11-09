@@ -17,18 +17,13 @@ google_analytics_js ="""
   gtag('config', 'UA-175428475-2');
 </script>
 """
-
-a=os.path.dirname(st.__file__)+'/static/index.html'
-with open(a, 'r') as f:
-    data=f.read()
-    if len(re.findall('UA-', data))==0:
-        with open(a, 'w') as ff:
-            newdata=re.sub('<head>','<head>'+google_analytics_js,data)
-            ff.write(newdata)
-
 #setting favicon
 favicon = Image.open('illustration_resources/favicon.jpg')
 st.set_page_config(page_title='CII Tool', page_icon=favicon)
+
+
+st.components.v1.iframe(google_analytics_js)
+
 
 from layout import _max_width_
 _max_width_()

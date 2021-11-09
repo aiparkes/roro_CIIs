@@ -117,13 +117,15 @@ st.image('illustration_resources/arcsilea.png', width=200)
 
 google_analytics_js = '''
                     <!-- Global site tag (gtag.js) - Google Analytics -->
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=G-Q9SK43CW2F">
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2">
                     <script>
                     window.dataLayer = window.dataLayer || [];
                     function gtag(){dataLayer.push(arguments);}
                     gtag('js', new Date());
 
-                    gtag('config', 'G-Q9SK43CW2F');
+
+
+                    gtag('config', 'UA-175428475-2');
                     </script>
                     '''
 

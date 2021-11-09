@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import plotly.graph_objects as go
-from quant_reg_funcs import ols_reg, quant_reg, describe_distribution
+from quant_reg_funcs import ols_reg, quant_reg
 import streamlit as st
 from PIL import Image
 #setting favicon

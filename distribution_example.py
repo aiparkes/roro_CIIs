@@ -6,9 +6,6 @@ import streamlit as st
 from PIL import Image
 import os
 import re
-#setting favicon
-favicon = Image.open('illustration_resources/favicon.jpg')
-st.set_page_config(page_title='CII Tool', page_icon=favicon)
 google_analytics_js ="""
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2"></script>
@@ -21,22 +18,18 @@ google_analytics_js ="""
 </script>
 """
 
-# Fetch the path of the index.html file
-path_ind = os.path.dirname(st.__file__)+'/static/index.html'
-
-# Open the file
-with open(path_ind, 'r') as index_file:
-    data=index_file.read()
-    # Check whether there is GA script
+a=os.path.dirname(st.__file__)+'/static/index.html'
+with open(a, 'r') as f:
+    data=f.read()
     if len(re.findall('UA-', data))==0:
-        # Insert Script for Google Analytics
-        with open(path_ind, 'w') as index_file_f:
-            # The Google Analytics script should be pasted in the header of the HTML file
-            newdata=re.sub('<head>','<head>'+google_analytics_js,data)
-            index_file_f.write(newdata)
+        with open(a, 'w') as ff:
+            newdata=re.sub('<head>','<head>'+code,data)
+            ff.write(newdata)
 
+#setting favicon
+favicon = Image.open('illustration_resources/favicon.jpg')
+st.set_page_config(page_title='CII Tool', page_icon=favicon)
 
-#import SessionState
 from layout import _max_width_
 _max_width_()
 

@@ -17,12 +17,12 @@ google_analytics_js ="""
   gtag('config', 'UA-175428475-2');
 </script>
 """
-#setting favicon
-favicon = Image.open('illustration_resources/favicon.jpg')
-st.set_page_config(page_title='CII Tool', page_icon=favicon)
-
 
 st.components.v1.iframe(google_analytics_js)
+
+#setting favicon
+#favicon = Image.open('illustration_resources/favicon.jpg')
+#st.set_page_config(page_title='CII Tool', page_icon=favicon)
 
 
 from layout import _max_width_

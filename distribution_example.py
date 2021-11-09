@@ -9,19 +9,17 @@ import re
 #setting favicon
 favicon = Image.open('illustration_resources/favicon.jpg')
 st.set_page_config(page_title='CII Tool', page_icon=favicon)
-google_analytics_js = '''
-                    <!-- Global site tag (gtag.js) - Google Analytics -->
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2">
-                    <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
+google_analytics_js ="""
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
-
-
-                    gtag('config', 'UA-175428475-2');
-                    </script>
-                    '''
+  gtag('config', 'UA-175428475-2');
+</script>
+"""
 
 # Fetch the path of the index.html file
 path_ind = os.path.dirname(st.__file__)+'/static/index.html'
@@ -29,16 +27,12 @@ path_ind = os.path.dirname(st.__file__)+'/static/index.html'
 # Open the file
 with open(path_ind, 'r') as index_file:
     data=index_file.read()
-
     # Check whether there is GA script
     if len(re.findall('UA-', data))==0:
-
         # Insert Script for Google Analytics
         with open(path_ind, 'w') as index_file_f:
-
             # The Google Analytics script should be pasted in the header of the HTML file
             newdata=re.sub('<head>','<head>'+google_analytics_js,data)
-
             index_file_f.write(newdata)
 
 

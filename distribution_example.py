@@ -23,7 +23,7 @@ with open(a, 'r') as f:
     data=f.read()
     if len(re.findall('UA-', data))==0:
         with open(a, 'w') as ff:
-            newdata=re.sub('<head>','<head>'+code,data)
+            newdata=re.sub('<head>','<head>'+google_analytics_js,data)
             ff.write(newdata)
 
 #setting favicon

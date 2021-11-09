@@ -13,7 +13,7 @@ st.set_page_config(page_title='CII Tool', page_icon=favicon)
 from layout import _max_width_
 _max_width_()
 
-data = pd.read_excel(r'C:\Users\AmyParkes\Arcsilea Ltd\IMO Short Term Measures - Documents\02 Data Sources\MRV\2019-v106-01122020-EU MRV Publication of information with IHS Data.xlsx', engine='openpyxl', sheet_name='2019',skiprows=2)
+data = pd.read_excel(r'2019-v106-01122020-EU MRV Publication of information with IHS Data.xlsx', engine='openpyxl', sheet_name='2019',skiprows=2)
 data = data[(data['Ship type']=='Ro-ro ship')]#(data['Ship type']=='Container/ro-ro cargo ship')]#(data['Ship type']=='Container/ro-ro cargo ship')]#|(data['Ship type']=='Ro-ro ship')]
 
 ##hide menu and footer

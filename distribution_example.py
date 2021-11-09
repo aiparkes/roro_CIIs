@@ -3,6 +3,24 @@ import pandas as pd
 import plotly.graph_objects as go
 from quant_reg_funcs import ols_reg, quant_reg
 import streamlit as st
+
+google_analytics_js = '''
+                    <!-- Global site tag (gtag.js) - Google Analytics -->
+                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2">
+                    <script>
+                    window.dataLayer = window.dataLayer || [];
+                    function gtag(){dataLayer.push(arguments);}
+                    gtag('js', new Date());
+
+
+
+                    gtag('config', 'UA-175428475-2');
+                    </script>
+                    '''
+
+st.components.v1.html(google_analytics_js)
+
+
 from PIL import Image
 #setting favicon
 favicon = Image.open('illustration_resources/favicon.jpg')
@@ -114,19 +132,3 @@ fig.update_layout(
 st.plotly_chart(fig, use_container_width = True)
 st.write('Powered by ')
 st.image('illustration_resources/arcsilea.png', width=200)
-
-google_analytics_js = '''
-                    <!-- Global site tag (gtag.js) - Google Analytics -->
-                    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2">
-                    <script>
-                    window.dataLayer = window.dataLayer || [];
-                    function gtag(){dataLayer.push(arguments);}
-                    gtag('js', new Date());
-
-
-
-                    gtag('config', 'UA-175428475-2');
-                    </script>
-                    '''
-
-st.components.v1.html(google_analytics_js)

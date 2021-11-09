@@ -3,7 +3,10 @@ import pandas as pd
 import plotly.graph_objects as go
 from quant_reg_funcs import ols_reg, quant_reg
 import streamlit as st
-
+from PIL import Image
+#setting favicon
+favicon = Image.open('illustration_resources/favicon.jpg')
+st.set_page_config(page_title='CII Tool', page_icon=favicon)
 google_analytics_js = '''
                     <!-- Global site tag (gtag.js) - Google Analytics -->
                     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-175428475-2">
@@ -19,12 +22,6 @@ google_analytics_js = '''
                     '''
 
 st.components.v1.html(google_analytics_js)
-
-
-from PIL import Image
-#setting favicon
-favicon = Image.open('illustration_resources/favicon.jpg')
-st.set_page_config(page_title='CII Tool', page_icon=favicon)
 
 
 #import SessionState
